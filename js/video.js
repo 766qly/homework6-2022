@@ -22,33 +22,37 @@ document.querySelector("#slower").addEventListener("click", function(){
 	console.log("Slow Down Video");
 	video = document.querySelector("video");
 	video.playbackRate *= 0.95;
-	console.log("Current Speed: " + video.playbackRate);
+	console.log("New speed is " + video.playbackRate);
 });
 
 document.querySelector("#faster").addEventListener("click", function(){
 	console.log("Slow Down Video");
 	video = document.querySelector("video");
 	video.playbackRate /= 0.95;
-	console.log("Current Speed: " + video.playbackRate);
+	console.log("New speed is " + video.playbackRate);
 });
 
 document.querySelector("#skip").addEventListener("click", function(){
 	console.log("Skip Video");
 	video = document.querySelector("video");
+	console.log("Original location " + video.currentTime);
 	video.currentTime += 15;
 	if(video.currentTime >= video.duration){
 		video.currentTime =0;
+		console.log("Going back to beginning");
 	}
-	console.log("Current location: " + video.currentTime);
+	console.log("New location " + video.currentTime);
 });
 
 document.querySelector("#mute").addEventListener("click", function(){
 	video = document.querySelector("video");
+	/*
 	if (video.muted) {
 		console.log("Umute Video");
 	}else{
 		console.log("Mute Video");
 	}
+	*/
 	video.muted = !video.muted;
 	mute = document.querySelector("#mute");
 	if (video.muted) {
@@ -59,20 +63,20 @@ document.querySelector("#mute").addEventListener("click", function(){
 });
 
 document.querySelector("#slider").addEventListener("change", function(){
-	console.log("Change Volume");
-	console.log(this.value)
+	//console.log("Change Volume");
+	console.log(this.value / 100);
     video = document.querySelector("video");
 	video.volume = this.value / 100;
 });
 
 document.querySelector("#vintage").addEventListener("click", function(){
-	console.log("Change to oldSchool");
+	//console.log("Change to oldSchool");
     video = document.querySelector("video");
 	video.classList.add("oldSchool")
 });
 
 document.querySelector("#orig").addEventListener("click", function(){
-	console.log("Change to original");
+	//console.log("Change to original");
     video = document.querySelector("video");
 	video.classList.remove("oldSchool")
 });

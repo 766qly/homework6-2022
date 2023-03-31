@@ -12,8 +12,7 @@ document.querySelector("#play").addEventListener("click", function(){
 	console.log("Play Video");
 	video = document.querySelector("#player1");
 	video.play();
-	document.querySelector("#volume").innerHTML = 100 + "%";
-	video.volume = 1;
+	document.querySelector("#volume").innerHTML = video.volume * 100 + "%";
 });
 
 document.querySelector("#pause").addEventListener("click", function(){

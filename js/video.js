@@ -25,14 +25,14 @@ document.querySelector("#pause").addEventListener("click", function(){
 document.querySelector("#slower").addEventListener("click", function(){
 	console.log("Slow Down Video");
 	video = document.querySelector("#player1");
-	video.playbackRate *= 0.95;
+	video.playbackRate *= 0.9;
 	console.log("New speed is " + video.playbackRate);
 });
 
 document.querySelector("#faster").addEventListener("click", function(){
 	console.log("Speed Up Video");
 	video = document.querySelector("#player1");
-	video.playbackRate /= 0.95;
+	video.playbackRate /= 0.9;
 	console.log("New speed is " + video.playbackRate);
 });
 
@@ -40,7 +40,7 @@ document.querySelector("#skip").addEventListener("click", function(){
 	console.log("Skip Video");
 	video = document.querySelector("#player1");
 	console.log("Original location " + video.currentTime);
-	video.currentTime += 15;
+	video.currentTime += 10;
 	if(video.currentTime >= video.duration){
 		video.currentTime =0;
 		console.log("Going back to beginning");
